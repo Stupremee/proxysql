@@ -689,7 +689,7 @@ void * __qc;
 void * __mysql_thread;
 void * __mysql_threads_handler;
 void * __query_processor;
-//void * __mysql_auth; 
+//void * __mysql_auth;
 
 
 
@@ -822,7 +822,7 @@ void ProxySQL_Main_process_global_variables(int argc, const char **argv) {
 	// alwasy try to open a config file
 	if (GloVars.confFile->OpenFile(GloVars.config_file) == true) {
 		GloVars.configfile_open=true;
-		proxy_info("Using config file %s\n", GloVars.config_file);
+		proxy_info("UUUUsing config file %s\n", GloVars.config_file);
 		const Setting& root = GloVars.confFile->cfg.getRoot();
 		if (root.exists("restart_on_missing_heartbeats")==true) {
 			// restart_on_missing_heartbeats datadir from config file
