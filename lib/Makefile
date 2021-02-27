@@ -1,5 +1,5 @@
 ifndef GIT_VERSION
-GIT_VERSION := $(shell git describe --long)
+GIT_VERSION := $(shell git rev-parse --short HEAD)
 ifndef GIT_VERSION
 $(error GIT_VERSION is not set)
 endif
