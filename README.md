@@ -1,22 +1,22 @@
 <a><img src="https://i0.wp.com/proxysql.com/wp-content/uploads/2020/04/ProxySQL-Colour-Logo.png?fit=800%2C278&ssl=1" alt="ProxySQL"></a>
 
-Introduction	
-============	
+Introduction
+============
 
-ProxySQL is a high performance, high availability, protocol aware proxy for MySQL and forks (like Percona Server and MariaDB).	
-All the while getting the unlimited freedom that comes with a GPL license.	
+ProxySQL is a high performance, high availability, protocol aware proxy for MySQL and forks (like Percona Server and MariaDB).
+All the while getting the unlimited freedom that comes with a GPL license.
 
-Its development is driven by the lack of open source proxies that provide high performance.  	
+Its development is driven by the lack of open source proxies that provide high performance.
 
-Useful links	
-===============	
+Useful links
+===============
 
-- [Official website](http://www.proxysql.com/)	
+- [Official website](http://www.proxysql.com/)
 - [Documentation](https://github.com/sysown/proxysql/wiki)
 - [DockerHub Repository](https://hub.docker.com/r/proxysql/proxysql)
-- [Benchmarks and blog posts](http://www.proxysql.blogspot.com/)	
-- [Forum](https://groups.google.com/forum/#!forum/proxysql/)	
-- [Linkedin group](https://www.linkedin.com/groups/13581070/)	
+- [Benchmarks and blog posts](http://www.proxysql.blogspot.com/)
+- [Forum](https://groups.google.com/forum/#!forum/proxysql/)
+- [Linkedin group](https://www.linkedin.com/groups/13581070/)
 
 Getting started
 ===============
@@ -87,7 +87,7 @@ yum install proxysql OR yum install proxysql-version
 ```
 
 ### Service management
-Once the software is installed, you can use the `service` command to control the process:  
+Once the software is installed, you can use the `service` command to control the process:
 
 #### Starting ProxySQL:
 ```bash
@@ -147,7 +147,7 @@ Admin> proxysql restart
 /etc/init.d/proxysql initial
 # or
 service proxysql initial
- 
+
 # If you are using the systemd unit file run:
 systemctl start proxysql-initial
 # or
@@ -183,7 +183,7 @@ ProxySQL version v1.4.9-1.1_DEBUG, codename Truls
 
 First of all, bear in mind that the best way to configure ProxySQL is through its admin interface. This lends itself to online configuration (without having to restart the proxy) via SQL queries to its admin database. It's an effective way to configure it both manually and in an automated fashion.
 
-As a secondary way to configure it, we have the configuration file. 
+As a secondary way to configure it, we have the configuration file.
 
 #### Configuring ProxySQL through the admin interface
 
@@ -233,7 +233,7 @@ Top-level sections:
 * `admin_variables`: contains global variables that control the functionality of the admin interface.
 * `mysql_variables`: contains global variables that control the functionality for handling the incoming MySQL traffic.
 * `mysql_servers`: contains rows for the `mysql_servers` table from the admin interface. Basically, these define the backend servers towards which the incoming MySQL traffic is routed. Rows are encoded as per the `.cfg` file format, here is an example:
-	
+
 	```bash
 	mysql_servers =
 	(
@@ -246,7 +246,7 @@ Top-level sections:
 	)
 	```
 * `mysql_users`: contains rows for the `mysql_users` table from the admin interface. Basically, these define the users which can connect to the proxy, and the users with which the proxy can connect to the backend servers. Rows are encoded as per the `.cfg` file format, here is an example:
-	
+
 	```bash
 	mysql_users:
 	(
@@ -261,7 +261,7 @@ Top-level sections:
 	)
 	```
 * `mysql_query_rules`: contains rows for the `mysql_query_rules` table from the admin interface. Basically, these define the rules used to classify and route the incoming MySQL traffic, according to various criteria (patterns matched, user used to run the query, etc.). Rows are encoded as per the `.cfg` file format, here is an example (Note: the example is a very generic query routing rule and it is recommended to create specific rules for queries rather than using a generic rule such as this):
-	
+
 	```bash
 	mysql_query_rules:
 	(
